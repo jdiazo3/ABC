@@ -1,0 +1,39 @@
+<div class="container pt-4">
+    <table class=" table table-dark mt-4">
+        <tbody>
+            <tr>
+                <th class="text-center"> Numero De Documento
+                </th>
+                <th class="text-center">
+                    Nombre
+                </th>
+                <th class="text-center">
+                    Apellido
+                </th>
+                <th class="text-center">
+                    Correo Electronico
+                </th>
+                <th class="text-center">
+                    Dirección
+                </th>
+
+                <th class="text-center">
+                    Vehiculos Disponiles
+                </th>
+                <th class="text-center">
+                    Acciones
+                </th>
+            </tr>
+            <tr *ngFor="let proveedor of proveedores ">
+                <td class="text-center">{{proveedor.documento_pro}}</td>
+                <td class="text-center">{{proveedor.name_pro}}</td>
+                <td class="text-center">{{proveedor.apellido_pro}}</td>
+                <td class="text-center">{{proveedor.email_pro}}</td>
+                <td class="text-center">{{proveedor.direccion_pro}}</td>
+                <td class="text-center">{{proveedor.vehiculos_pro}}</td>
+                <td><button type="button " class="btn btn-warning mx-2 " (click)="Editar(proveedor)">Editar</button>
+                    <button type="button " class="btn btn-danger mx-2 " (click)="Eliminar(proveedor)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
