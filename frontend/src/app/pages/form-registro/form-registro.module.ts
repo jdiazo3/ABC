@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormRegistroRoutingModule } from './form-registro-routing.module';
 import { FormRegistroComponent } from './form-registro.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FormRegistroComponent } from './form-registro.component';
   ],
   imports: [
     CommonModule,
-    FormRegistroRoutingModule
+    FormRegistroRoutingModule,
+    FormsModule
   ]
 })
 export class FormRegistroModule { }

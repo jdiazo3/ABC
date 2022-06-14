@@ -17,5 +17,8 @@ export class HeaderComponent implements OnInit {
   listar(){
     this.router.navigate(['/listar']);
   }
+  Consultar(){
+    this.router.navigate(['/buscar']);
+  }
   
 }

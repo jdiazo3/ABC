@@ -1,4 +1,14 @@
-<div class="container pt-4">
+<div class="container pt-4 ">
+    <div class="text-uppercase text-center nam">
+        <form (ngSubmit)="Buscar(documento_pro)" #f="ngForm" class="form">
+            <div class="row align-items-start">
+                <div class="col ">
+                    <input [(ngModel)]="documento_pro" name="documento_pro " type="number" class="form-control" placeholder="Numero De Documento ">
+                    <button type="submit " class="btn btn-outline-success bii mt-2 ww ">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <table class=" table mt-4 bor">
         <tbody>
             <tr>
@@ -24,7 +34,7 @@
                     Acciones
                 </th>
             </tr>
-            <tr *ngFor="let proveedor of proveedores ">
+            <tr>
                 <td class="text-center">{{proveedor.documento_pro}}</td>
                 <td class="text-center">{{proveedor.name_pro}}</td>
                 <td class="text-center">{{proveedor.apellido_pro}}</td>
@@ -34,10 +44,9 @@
                 <td>
                     <div class="row align-items-start">
                         <div class="col align-self-center ms-3">
-                            <button type=" button " class="btn btn-outline-warning " (click)="Editar(proveedor) ">Editar</button>
+                            <button type=" button " class="btn btn-outline-warning" (click)="Editar(proveedor)">Editar</button>
                         </div>
-                        <div class="col align-self-center">
-                            <button type="button " class="btn btn-outline-danger " (click)="Eliminar(proveedor) ">Eliminar</button>
+                        <div class=" col align-self-center "><button type="button " (click)="Eliminar(documento_pro)" class="btn btn-outline-danger ">Eliminar</button>
                         </div>
                     </div>
                 </td>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProveedorserviceService } from '../services/proveedorservice.service';
 import { Router } from '@angular/router';
+import { proveedor } from '../interface/proveedor.interface';
 
 @Component({
   selector: 'app-form-registro',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./form-registro.component.css']
 })
 export class FormRegistroComponent implements OnInit {
-  
+  proveedor: proveedor = new proveedor;
 
   constructor(
     private ProveedorserviceService : ProveedorserviceService,
@@ -17,12 +18,17 @@ export class FormRegistroComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
   }
 
   
 
   Guardar(){
-    alert();
-    
+    this.ProveedorserviceService.createProveedor(this.proveedor)
+    .subscribe(data=>{
+      alert("Se Agrego con Exito...!!!");
+      this.router.navigate(["listar"]);
+    })
   }
+
 }

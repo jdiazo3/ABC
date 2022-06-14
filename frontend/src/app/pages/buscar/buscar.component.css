@@ -1,0 +1,37 @@
+.bor {
+    border: 1px solid#000;
+}
+
+.form {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #000;
+    background-color: rgba(134, 134, 134, 0.219);
+}
+
+th,
+td {
+    width: auto;
+    height: auto;
+    border: 1px solid#000;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+th {
+    background-color: #3d3d3d4f;
+}
+
+.nam {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.ww {
+    width: 20%;
+}

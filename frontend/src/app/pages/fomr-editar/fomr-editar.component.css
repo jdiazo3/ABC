@@ -1,0 +1,29 @@
+.form {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #000;
+    background-color: rgba(134, 134, 134, 0.219);
+}
+
+.form input:hover {
+    background-color: #3564ac60;
+}
+
+.nam {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.bii {
+    width: 100%;
+}
+
+.hr {
+    width: 100%;
+    background-color: #3564ac60;
+}

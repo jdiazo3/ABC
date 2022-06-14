@@ -3,6 +3,15 @@
     min-height: 50px;
 }
 
-#option {
-    min-width: 100%;
+.mar {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.option {
+    min-width: 30%;
+    box-shadow: 2px 2px 5px #000;
+    text-transform: uppercase;
 }
