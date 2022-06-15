@@ -1,5 +1,4 @@
 
-
 export class proveedor{
     documento_pro!: number;
     name_pro!: string;

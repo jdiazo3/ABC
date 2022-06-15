@@ -15,11 +15,12 @@ export class ListarComponent implements OnInit {
     this.ProveedorserviceService.getProveedores()
     .subscribe(data=>{
       this.proveedores=data;
+      console.log(this.proveedores);
     });
   }
   Editar(proveedores:proveedores){
       localStorage.setItem("documento_pro",proveedores.documento_pro.toString());
-      this.router.navigate(["/edit"]);
+      this.router.navigate(["/formregistro"]);
   }
 
   Eliminar(proveedores:proveedores){

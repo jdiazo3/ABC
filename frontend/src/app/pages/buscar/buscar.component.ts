@@ -15,9 +15,9 @@ export class BuscarComponent implements OnInit {
 
  documento_pro!:number;
 
+ user!: String;
+ proveedordata: any[] = [];
  proveedor: proveedor = new proveedor;
- 
- proveedores!: proveedores[];
   
   constructor(private ProveedorserviceService : ProveedorserviceService,private router:Router) { 
     
@@ -28,16 +28,13 @@ export class BuscarComponent implements OnInit {
     }
 
     Buscar(documento_pro:number){
-    
-      this.ProveedorserviceService.getProveedoresId(documento_pro)
-      .subscribe(data=>{
-        this.proveedor.documento_pro=data.documento_pro;
-        this.proveedor.name_pro=data.name_pro;
-        this.proveedor.apellido_pro=data.apellido_pro;
-        this.proveedor.direccion_pro=data.direccion_pro;
-        this.proveedor.email_pro=data.email_pro;
-        this.proveedor.vehiculos_pro=data.vehiculos_pro;
-      });
+      this.ProveedorserviceService.getProveedoresId(documento_pro).subscribe(data=>{
+        this.proveedor=data;
+        this.proveedordata=[this.proveedor]
+        console.log(this.proveedordata);
+        this.user="h"
+      })
+      
     }
 
     

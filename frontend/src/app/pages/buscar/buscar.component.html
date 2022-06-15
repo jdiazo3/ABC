@@ -1,6 +1,8 @@
 <div class="container pt-4 ">
     <div class="text-uppercase text-center nam">
         <form (ngSubmit)="Buscar(documento_pro)" #f="ngForm" class="form">
+            <h2>Proveedor</h2>
+            <hr class=" ">
             <div class="row align-items-start">
                 <div class="col ">
                     <input [(ngModel)]="documento_pro" name="documento_pro " type="number" class="form-control" placeholder="Numero De Documento ">
@@ -9,7 +11,7 @@
             </div>
         </form>
     </div>
-    <table class=" table mt-4 bor">
+    <table class=" table mt-4 bor" *ngIf="user">
         <tbody>
             <tr>
                 <th class="text-center"> Numero De Documento
@@ -34,19 +36,20 @@
                     Acciones
                 </th>
             </tr>
-            <tr>
-                <td class="text-center">{{proveedor.documento_pro}}</td>
-                <td class="text-center">{{proveedor.name_pro}}</td>
-                <td class="text-center">{{proveedor.apellido_pro}}</td>
-                <td class="text-center">{{proveedor.email_pro}}</td>
-                <td class="text-center">{{proveedor.direccion_pro}}</td>
-                <td class="text-center">{{proveedor.vehiculos_pro}}</td>
+            <tr *ngFor="let provee of proveedordata">
+                <td class="text-center">{{provee.documento_pro}}</td>
+                <td class="text-center">{{provee.name_pro}}</td>
+                <td class="text-center">{{provee.apellido_pro}}</td>
+                <td class="text-center">{{provee.email_pro}}</td>
+                <td class="text-center">{{provee.direccion_pro}}</td>
+                <td class="text-center">{{provee.vehiculos_pro}}</td>
                 <td>
                     <div class="row align-items-start">
-                        <div class="col align-self-center ms-3">
-                            <button type=" button " class="btn btn-outline-warning" (click)="Editar(proveedor)">Editar</button>
+                        <div class="col align-self-center ">
+                            <button type=" button " class="btn btn-outline-warning dd" (click)="Editar(provee)">Editar</button>
                         </div>
-                        <div class=" col align-self-center "><button type="button " (click)="Eliminar(documento_pro)" class="btn btn-outline-danger ">Eliminar</button>
+                        <div class=" col align-self-center ">
+                            <button type="button " (click)="Eliminar(provee.documento_pro)" class=" btn btn-outline-danger dd ">Eliminar</button>
                         </div>
                     </div>
                 </td>

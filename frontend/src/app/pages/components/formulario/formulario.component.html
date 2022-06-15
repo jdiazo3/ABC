@@ -1,0 +1,17 @@
+<section class="pt-4 pb-4">
+    <div class="container">
+        <div class="text-uppercase text-center nam">
+            <form (ngSubmit)="Guardar()" #f="ngForm" class="form">
+                <h2>Proveedor</h2>
+                <hr class=" ">
+                <input [(ngModel)]="proveedor.documento_pro" name="documento_pro " type="number" class="form-control my-3 " placeholder="Numero De Documento ">
+                <input [(ngModel)]="proveedor.name_pro" name="name_pro " type="text " class="form-control my-3 " placeholder="Nombre ">
+                <input [(ngModel)]="proveedor.apellido_pro" name="apellido_pro " type="text" class="form-control my-2 " placeholder="Apellido ">
+                <input [(ngModel)]="proveedor.email_pro" name="email_pro " type="text" class="form-control my-3 " placeholder="Correo Electronico ">
+                <input [(ngModel)]="proveedor.direccion_pro" name="direccion_pro " type="text" class="form-control my-3 " placeholder=" Direccion ">
+                <input [(ngModel)]="proveedor.vehiculos_pro" name="vehiculos_pro " type="number" class="form-control my-3 " placeholder="Vehiculos Disponibles ">
+                <button type="submit" class="btn btn-outline-success bii mt-5 ">Guardar</button>
+            </form>
+        </div>
+    </div>
+</section>
