@@ -49,6 +49,11 @@ public class ProveedorServiceImpl implements ProveedorService {
     public Optional<Proveedor> findByNombre(String nombre) {
         return this.proveedorRepositorio.findByNombre(nombre);
     }
+
+    @Override
+    public Optional<Proveedor> search(String filtro) {
+        return proveedorRepositorio.search(filtro);
+    }
     
 
 }

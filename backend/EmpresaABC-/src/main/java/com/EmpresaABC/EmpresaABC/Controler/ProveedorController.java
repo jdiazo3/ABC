@@ -60,6 +60,16 @@ public class ProveedorController {
          }
          return ResponseEntity.ok(oProveedor);
      }
+
+     //buscar por nombre
+     @GetMapping(value = "/nam/{filtro}")
+     public ResponseEntity<?> search(@PathVariable String filtro) {
+        Optional<Proveedor> oProveedor = proveedorService.search(filtro);
+         if (!oProveedor.isPresent()) {
+             return ResponseEntity.notFound().build();
+         }
+         return ResponseEntity.ok(oProveedor);
+     }
     
     
     //listar
