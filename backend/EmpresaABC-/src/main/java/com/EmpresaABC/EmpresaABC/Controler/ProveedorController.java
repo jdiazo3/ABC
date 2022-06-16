@@ -51,6 +51,15 @@ public class ProveedorController {
         return ResponseEntity.ok(oProveedor);
     }
 
+     //buscar por nombre
+     @GetMapping(value = "/name/{nombre}")
+     public ResponseEntity<?> readname(@PathVariable String nombre) {
+         Optional<Proveedor> oProveedor = proveedorService.findByNombre(nombre);
+         if (!oProveedor.isPresent()) {
+             return ResponseEntity.notFound().build();
+         }
+         return ResponseEntity.ok(oProveedor);
+     }
     
     
     //listar
@@ -71,7 +80,7 @@ public class ProveedorController {
         if (!oProveedor.isPresent()) {
             return ResponseEntity.notFound().build();
         }
-        oProveedor.get().setName_pro(po.getName_pro());
+        oProveedor.get().setNombre(po.getNombre());
         oProveedor.get().setApellido_pro(po.getApellido_pro());
         oProveedor.get().setDocumento_pro(po.getDocumento_pro());
         oProveedor.get().setEmail_pro(po.getEmail_pro());
@@ -91,4 +100,8 @@ public class ProveedorController {
      proveedorService.deleteById(documento_pro);
      return ResponseEntity.ok().build();
      }
+
+
+
+
 }

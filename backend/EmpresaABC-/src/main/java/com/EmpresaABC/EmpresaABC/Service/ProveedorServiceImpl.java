@@ -3,7 +3,6 @@ package com.EmpresaABC.EmpresaABC.Service;
 import com.EmpresaABC.EmpresaABC.Repository.ProveedorRepositorio;
 import com.EmpresaABC.EmpresaABC.entity.Proveedor;
 
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,8 +46,8 @@ public class ProveedorServiceImpl implements ProveedorService {
     
     @Override
     @Transactional
-    public List<Proveedor> findByname_pro(String name_pro) {
-        return this.findByname_pro(name_pro);
+    public Optional<Proveedor> findByNombre(String nombre) {
+        return this.proveedorRepositorio.findByNombre(nombre);
     }
     
 

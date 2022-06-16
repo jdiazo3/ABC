@@ -27,7 +27,7 @@ public class Proveedor {
     private Integer documento_pro;
     
     @Column(length = 20)
-    private String name_pro;
+    private String nombre;
     
     @Column(length = 20)
     private String apellido_pro;
@@ -42,15 +42,15 @@ public class Proveedor {
     /**
      * @return the name_pro
      */
-    public String getName_pro() {
-        return name_pro;
+    public String getNombre() {
+        return nombre;
     }
 
     /**
-     * @param name_pro the name_pro to set
+     * @param nombre the name_pro to set
      */
-    public void setName_pro(String name_pro) {
-        this.name_pro = name_pro;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     /**
