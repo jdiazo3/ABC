@@ -6,6 +6,6 @@ documento_pro integer not null,
 apellido_pro varchar(20), 
 direccion_pro varchar(50), 
 email_pro varchar(50), 
-name_pro varchar(20), 
+nombre varchar(20), 
 vehiculos_pro integer, 
 primary key (documento_pro)) engine=InnoDB
