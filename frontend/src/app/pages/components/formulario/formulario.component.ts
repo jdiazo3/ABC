@@ -15,7 +15,7 @@ export class FormularioComponent implements OnInit {
   constructor(
     private ProveedorserviceService : ProveedorserviceService,
     private router:Router
-    ) { 
+    ) {
 
     }
 
@@ -25,7 +25,6 @@ export class FormularioComponent implements OnInit {
   
     editar(){
       let documento_pro = localStorage.getItem("documento_pro");
-      console.log(documento_pro);
       this.ProveedorserviceService.getProveedoresId(Number(documento_pro))
       .subscribe(data=>{
         this.proveedor=data;

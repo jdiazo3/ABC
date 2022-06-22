@@ -2,7 +2,7 @@
 
 export interface proveedores{
     documento_pro : number;
-    name_pro : string;
+    nombre : string;
     apellido_pro : string;
     email_pro : string;
     direccion_pro : string;
