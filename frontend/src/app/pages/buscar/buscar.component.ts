@@ -34,21 +34,21 @@ export class BuscarComponent implements OnInit {
     }
 
     Buscar(documento_pro:number){
-      this.ProveedorserviceService.getProveedoresId(documento_pro).subscribe(data=>{this.proveedor=data; this.proveedordata=[this.proveedor]
+      this.ProveedorserviceService.getProveedoresIded(documento_pro).subscribe(data=>{this.proveedor=data; this.proveedordata=[this.proveedor]
         this.user="h";
-        this.documento_pro=0},
-        error=> {this.errorMessage = error; alert("El proveedor no se encuentra registrado")})
+        this.documento_pro},
+        error=> {this.errorMessage = error; alert("El proveedor no se encuentra registrado");this.user=""})
     }
     BuscarNombre(nombre:String){
       this.ProveedorserviceService.getProveedoresNombre(nombre).subscribe(data=>{this.proveedor=data; this.proveedordata=[this.proveedor]
         console.log(data);
         this.user="h";
         this.nombre=""},
-        error=> {this.errorMessage = error; alert("El proveedor no se encuentra registrado")})
+        error=> {this.errorMessage = error; alert("El proveedor no se encuentra registrado");this.user=""})
     }
     
     
-      Editar(proveedores:proveedores){
+    Editar(proveedores:proveedores){
         localStorage.setItem("documento_pro",proveedores.documento_pro.toString());
         this.router.navigate(["/formregistro"]);
     }
@@ -57,8 +57,10 @@ export class BuscarComponent implements OnInit {
       this.ProveedorserviceService.eliminarProveedor(documento_pro)
       .subscribe(date=>{
         alert("usuario eliminado...");
-      })
+      }, 
+      error=> {this.errorMessage = error; alert("El proveedor no se encuentra registrado");this.user=""})
     }
+
     bdoc(){
       this.buscadordoc=""
       this.formdoc="g"

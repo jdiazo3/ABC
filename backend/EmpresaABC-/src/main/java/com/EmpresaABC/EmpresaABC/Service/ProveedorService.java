@@ -19,5 +19,6 @@ public interface ProveedorService {
     public void deleteById(Integer documento_pro);
     public Optional<Proveedor> findByNombre(String nombre);
     public Optional<Proveedor>search(@Param("filtro")String filtro);
+    public Optional<Proveedor>searchdoc(@Param("filtrodoc")Integer filtrodoc);
     
 }

@@ -54,6 +54,12 @@ public class ProveedorServiceImpl implements ProveedorService {
     public Optional<Proveedor> search(String filtro) {
         return proveedorRepositorio.search(filtro);
     }
+
+    @Override
+    public Optional<Proveedor> searchdoc(Integer filtrodoc) {
+        return proveedorRepositorio.searchdoc(filtrodoc);
+    }
+
     
 
 }

@@ -30,6 +30,10 @@ export class ProveedorserviceService {
  getProveedoresId(documento_pro:number) {
   return this.http.get<proveedores>(this.apiUrl+"/"+documento_pro).pipe(catchError(this.errorproveedor));
 }
+
+getProveedoresIded(documento_pro:number) {
+  return this.http.get<proveedores>(this.apiUrl+"/document/"+documento_pro).pipe(catchError(this.errorproveedor));
+}
 getProveedoresNombre(nombre:String) {
   return this.http.get<proveedores>(this.apiUrl+"/nam/"+nombre).pipe(catchError(this.errorproveedor));
 }

@@ -45,12 +45,21 @@ public class ProveedorController {
     @GetMapping(value = "/{documento_pro}")
     public ResponseEntity<?> read(@PathVariable Integer documento_pro) {
         Optional<Proveedor> oProveedor = proveedorService.findById(documento_pro);
-        if (!oProveedor.isPresent()) {
+        if(!proveedorService.findById(documento_pro).isPresent()){
             return ResponseEntity.notFound().build();
-        }
+         }
         return ResponseEntity.ok(oProveedor);
     }
 
+    //buscar por documento para la edicion
+        @GetMapping(value = "/document/{documento_pro}")
+         public ResponseEntity<?>readdoc(@PathVariable Integer documento_pro) {
+            Optional<Proveedor> oProveedor = proveedorService.searchdoc(documento_pro);
+            if(!proveedorService.searchdoc(documento_pro).isPresent()){
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok(oProveedor);
+        }
      //buscar por nombre
      @GetMapping(value = "/name/{nombre}")
      public ResponseEntity<?> readname(@PathVariable String nombre) {
@@ -67,8 +76,8 @@ public class ProveedorController {
         Optional<Proveedor> oProveedor = proveedorService.search(filtro);
          if (!oProveedor.isPresent()) {
              return ResponseEntity.notFound().build();
-         }
-         return ResponseEntity.ok(oProveedor);
+        }
+        return ResponseEntity.ok(oProveedor);
      }
     
     
@@ -87,9 +96,9 @@ public class ProveedorController {
     @PutMapping("/{documento_pro}")
     public ResponseEntity<?> update(@RequestBody Proveedor po,@PathVariable Integer documento_pro){
         Optional<Proveedor> oProveedor= proveedorService.findById(documento_pro);
-        if (!oProveedor.isPresent()) {
+        if(!proveedorService.findById(documento_pro).isPresent()){
             return ResponseEntity.notFound().build();
-        }
+         }
         oProveedor.get().setNombre(po.getNombre());
         oProveedor.get().setApellido_pro(po.getApellido_pro());
         oProveedor.get().setDocumento_pro(po.getDocumento_pro());
